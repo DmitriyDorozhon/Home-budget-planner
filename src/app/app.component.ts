@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component ,  OnInit} from '@angular/core';
+import {GlobalService} from "./global.service";
+import {IncomService} from "./incom/incom.service";
+import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/tasks/completion";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'untitled';
+  title = 'Money Proj';
+  constructor(private global:GlobalService,private incomeService:IncomService) {
+  }
+
+  ngOnInit(): void {
+    this.incomeService.addIncomeSum();
+  }
 }

@@ -1,0 +1,15 @@
+.container{
+  background: #fcfcfc;
+  width: 100%;
+
+}
+.addBtn{
+  width: 100px;
+  height: 100px;
+  font-size: 120px;
+  color: #fdfdfd;
+  background: #59af28;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
