@@ -1,0 +1,52 @@
+
+<div (click)="expensesService.modalVisible=false" class="wrapper">
+  <div (click)="$event.stopPropagation()" class="expenses-form__container">
+    <form  [formGroup]="expensesFormGroup"  class="expenses-form">
+      <mat-form-field appearance="standard">
+        <mat-label>Sum</mat-label>
+        <input mask="separator.0" suffix=" ₴" thousandSeparator="." #sum formControlName="sum" name="sum" matInput placeholder="Enter Sum" >
+        <mat-error *ngIf="!sum.required">
+          Sum is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Comment</mat-label>
+        <input matInput  formControlName="comment" #comment maxlength="256" placeholder="Enter Comment">
+        <mat-hint align="end">{{comment.value.length}} / 256</mat-hint>
+        <mat-error *ngIf="!comment.required">
+          Comment is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field  appearance="standard">
+        <input matInput #date  formControlName="date"  [matDatepicker]="picker" placeholder="Choose date">
+        <mat-error *ngIf="!date.required">
+          Comment is <strong>required</strong>
+        </mat-error>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Choose wallet </mat-label>
+        <mat-select #wallet formControlName="wallet">
+          <mat-option value="card">
+            Card
+          </mat-option>
+          <mat-option value="cash">
+            Cash
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="!wallet.required">
+          Wallet is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="btnCase">
+        <button (click)="addExpenses()" class="expenses-form__btn" mat-raised-button>Add</button>
+        <button (click)="expensesService.modalVisible=false" class="expenses-form__btn" mat-raised-button>Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+

@@ -20,8 +20,12 @@ import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { MatTableComponent } from './incom/mat-table/mat-table.component'
+import { MatTableComponent } from './incom/Income-table/mat-table.component'
 import {MatTable, MatTableModule} from "@angular/material/table";
+import {MatTabsModule} from "@angular/material/tabs";
+import { ExpensesComponent } from './expenses/expenses.component';
+import { ExpensesTableComponent } from './expenses/expenses-table/expenses-table.component';
+import { ExpensesModalComponent } from './expenses/expenses-modal/expenses-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,27 +33,31 @@ import {MatTable, MatTableModule} from "@angular/material/table";
     HeaderComponent,
     IncomComponent,
     ModalAddIncomeComponent,
-    MatTableComponent
+    MatTableComponent,
+    ExpensesComponent,
+    ExpensesTableComponent,
+    ExpensesModalComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        MatIconModule,
-        MatCardModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatRadioModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-      NgxMaskModule.forRoot(),
-      MatTableModule,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
+    MatTableModule,
+    MatTabsModule,
 
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

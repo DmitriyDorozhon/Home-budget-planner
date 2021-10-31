@@ -11,6 +11,9 @@ export class HeaderComponent implements OnInit {
   constructor(public global:GlobalService) { }
 
   ngOnInit(): void {
-  }
+        throw new Error('Method not implemented.');
+    }
+
+
 
 }
