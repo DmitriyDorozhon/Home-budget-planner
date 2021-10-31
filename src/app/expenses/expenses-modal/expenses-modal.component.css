@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
   background-color: rgba(126, 126, 126, 0.7);
   position: absolute;
   display: block;
@@ -7,7 +7,8 @@
   width: 100vw;
   height: 87vh;
 }
-.expenses-form__container{
+
+.expenses-form__container {
   background: linear-gradient(180deg, rgb(255, 255, 255), rgb(204, 204, 204));
   height: 400px;
   width: 600px;
@@ -19,13 +20,14 @@
   align-items: center;
   justify-content: center;
 }
-.expenses-form{
+
+.expenses-form {
   display: flex;
   width: 300px;
   justify-content: space-around;
   flex-direction: column;
 }
 
-.expenses-form__btn{
-   margin: 5px;
- }
+.expenses-form__btn {
+  margin: 5px;
+}

@@ -1,7 +1,5 @@
-
 <div class="container">
-  <expenses-table *ngIf="!expensesService.modalVisible" ></expenses-table>
-  <button (click)="expensesService.modalVisible=true"  class="addBtn" mat-fab>+</button>
+  <expenses-table *ngIf="!expensesService.modalVisible"></expenses-table>
+  <button (click)="expensesService.modalVisible=true" class="addBtn" mat-fab>+</button>
   <expenses-modal *ngIf="expensesService.modalVisible"></expenses-modal>
-
 </div>

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="logo"></div>
   <div class="wallets">
-    <div class="wallet card" >Card: {{global.card |  mask:"separator.0 ":"."}} ₴</div>
-    <div class="wallet cash">Cash: {{global.cash | mask:"separator.0 ":"."}} ₴</div>
+    <div class="wallet card">Card: {{global.card < 0 ? "-" : ""}} {{global.card |  mask:"separator.0 ":"."}} ₴</div>
+    <div class="wallet cash">Cash: {{global.cash < 0 ? "-" : ""}} {{global.cash | mask:"separator.0 ":"."}} ₴</div>
   </div>
 </div>

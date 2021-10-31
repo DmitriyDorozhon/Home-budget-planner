@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GlobalService} from "../global.service";
 
 @Component({
@@ -8,12 +8,12 @@ import {GlobalService} from "../global.service";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public global:GlobalService) { }
+  constructor(public global: GlobalService) {
+  }
 
   ngOnInit(): void {
-        throw new Error('Method not implemented.');
-    }
 
+  }
 
 
 }

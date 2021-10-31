@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ExpensesService} from "./expenses.service";
 
 @Component({
@@ -8,7 +8,8 @@ import {ExpensesService} from "./expenses.service";
 })
 export class ExpensesComponent implements OnInit {
 
-  constructor(public expensesService:ExpensesService) {}
+  constructor(public expensesService: ExpensesService) {
+  }
 
   ngOnInit(): void {
   }
