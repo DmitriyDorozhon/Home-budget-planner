@@ -5,14 +5,14 @@
 
       <mat-form-field appearance="standard">
         <mat-label>Sum</mat-label>
-        <input #sum formControlName="sum" name="sum" matInput placeholder="Enter Sum" >
+        <input mask="separator.0" suffix=" ₴" thousandSeparator="." #sum formControlName="sum" name="sum" matInput placeholder="Enter Sum" >
         <mat-error *ngIf="!sum.required">
           Sum is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field appearance="standard">
         <mat-label>Comment</mat-label>
-        <input matInput formControlName="comment" #comment maxlength="256" placeholder="Enter Comment">
+        <input matInput  formControlName="comment" #comment maxlength="256" placeholder="Enter Comment">
         <mat-hint align="end">{{comment.value.length}} / 256</mat-hint>
         <mat-error *ngIf="!comment.required">
           Comment is <strong>required</strong>

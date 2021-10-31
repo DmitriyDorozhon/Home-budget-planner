@@ -19,6 +19,8 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import {ReactiveFormsModule} from "@angular/forms";
         MatDatepickerModule,
         MatNativeDateModule,
         MatSelectModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+      NgxMaskModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]
