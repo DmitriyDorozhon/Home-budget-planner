@@ -1,12 +1,5 @@
 <div class="container">
-  <ul>
-    <li *ngFor="let income of incomService.incomeArr">
-      <span>{{income.sum}}</span>
-      <span>{{income.comment}}</span>
-      <span>{{income.date}}</span>
-      <span>{{income.wallet}}</span>
-    </li>
-  </ul>
+  <income-table *ngIf="!incomService.modalVisible"></income-table>
   <button (click)="incomService.modalVisible=true" class="addBtn" mat-fab>+</button>
 <modal-add-income *ngIf="incomService.modalVisible"></modal-add-income>
 </div>

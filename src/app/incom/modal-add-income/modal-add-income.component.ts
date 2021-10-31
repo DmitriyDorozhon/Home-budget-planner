@@ -3,6 +3,7 @@ import {IncomService} from "../incom.service";
 import {GlobalService} from "../../global.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {IncomeObj} from "./income-obj.model";
+import {MatTableComponent} from "../mat-table/mat-table.component";
 
 @Component({
   selector: 'modal-add-income',
@@ -36,6 +37,8 @@ export class ModalAddIncomeComponent implements OnInit {
       this.incomService.incomeArr.push(new IncomeObj(incomeSum,incomeComment,incomeDate.toDateString(),incomeWallet))
       this.incomService.addIncomeSum();
       this.incomService.modalVisible=false;
+
+
 
     }
 

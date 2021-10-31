@@ -19,14 +19,17 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { MatTableComponent } from './incom/mat-table/mat-table.component'
+import {MatTable, MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     IncomComponent,
-    ModalAddIncomeComponent
+    ModalAddIncomeComponent,
+    MatTableComponent
   ],
     imports: [
         BrowserModule,
@@ -43,7 +46,9 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
         MatNativeDateModule,
         MatSelectModule,
         ReactiveFormsModule,
-      NgxMaskModule.forRoot()
+      NgxMaskModule.forRoot(),
+      MatTableModule,
+
     ],
   providers: [],
   bootstrap: [AppComponent]
