@@ -39,6 +39,22 @@ export class IncomService {
 
   }
 
+  public getSumIncomeSumCardAndCash(get:string):number{
+    let Sum:number=0;
+    this.incomeArr.forEach((item)=>{
+      if (get === "sum"){
+        Sum+=item.sum;
+      }
+      else {
+        if (item.wallet===get){
+          Sum+=item.sum;
+        }
+      }
+    })
+    return Sum;
+  };
+
+
 
 
 }

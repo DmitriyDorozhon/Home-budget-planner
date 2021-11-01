@@ -26,6 +26,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensesTableComponent } from './expenses/expenses-table/expenses-table.component';
 import { ExpensesModalComponent } from './expenses/expenses-modal/expenses-modal.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ExpensesModalComponent } from './expenses/expenses-modal/expenses-modal
     MatTableComponent,
     ExpensesComponent,
     ExpensesTableComponent,
-    ExpensesModalComponent
+    ExpensesModalComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

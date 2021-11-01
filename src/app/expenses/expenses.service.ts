@@ -19,14 +19,56 @@ export class ExpensesService {
       date: new Date().toDateString(),
       wallet: "card",
       category:"groceries"
-    }, {
-      sum: 100,
+    },
+    {
+      sum: 200,
+      comment: "test",
+      date: new Date().toDateString(),
+      wallet: "cash",
+      category:"home"
+    },
+    {
+      sum: 300,
       comment: "test",
       date: new Date().toDateString(),
       wallet: "cash",
       category:"transportation"
-    }
+    },
+    {
+      sum: 500,
+      comment: "test",
+      date: new Date().toDateString(),
+      wallet: "card",
+      category:"leisure"
+    },
+    {
+      sum: 154,
+      comment: "test",
+      date: new Date().toDateString(),
+      wallet: "card",
+      category:"health"
+    },
+    {
+      sum: 75,
+      comment: "test",
+      date: new Date().toDateString(),
+      wallet: "card",
+      category:"communal payments"
+    },{
+      sum: 125,
+      comment: "test",
+      date: new Date().toDateString(),
+      wallet: "cash",
+      category:"gifts"
+    },{
+      sum: 423,
+      comment: "test",
+      date: new Date().toDateString(),
+      wallet: "cash",
+      category:"other"
+    },
   ];
+
 
 
   public subtractExpensesSum() {
@@ -39,8 +81,12 @@ export class ExpensesService {
         this.global.cash -= item.sum
       }
       ;
-    })
+    });
 
   }
+
+
+
+
 
 }

@@ -1,22 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {IncomService} from "../../incom/incom.service";
+
 import {GlobalService} from "../../global.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {modelSendObj} from "../../incom/modal-add-income/model-send-obj.model";
 import {ExpensesService} from "../expenses.service";
-import {global} from "@angular/compiler/src/util";
 
-
-enum Categories {
-  Groceries = "groceries",
-  Home="home",
-  Transportation = "transportation",
-  Leisure="leisure",
-  Health="health",
-  Сommunal="communal payments",
-  Gifts="gifts",
-  Other="other",
-};
 
 @Component({
   selector: 'expenses-modal',
@@ -26,7 +14,7 @@ enum Categories {
 
 
 export class ExpensesModalComponent implements OnInit {
-  constructor(public expensesService: ExpensesService, public global: GlobalService) {
+  constructor(public expensesService: ExpensesService) {
 
   }
   public categories = [
@@ -62,10 +50,6 @@ export class ExpensesModalComponent implements OnInit {
       this.expensesService.expensesArr.push(new modelSendObj(ExpensesSum, ExpensesComment, ExpensesDate.toDateString(), ExpensesWallet,ExpensesCategory));
       this.expensesService.subtractExpensesSum();
       this.expensesService.modalVisible = false;
-      console.log(this.expensesService.expensesArr);
-      console.log(ExpensesCategory);
-
-
     }
 
 

@@ -14,6 +14,7 @@ export class AppComponent {
   constructor(private global:GlobalService,private incomeService:IncomService,private expensesService:ExpensesService) {
   }
 
+
   ngOnInit(): void {
     this.incomeService.addIncomeSum();
     this.expensesService.subtractExpensesSum();
