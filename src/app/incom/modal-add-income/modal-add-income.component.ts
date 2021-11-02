@@ -42,7 +42,7 @@ export class ModalAddIncomeComponent implements OnInit {
       else if (incomeWallet==="cash"){
         this.global.cash+=incomeSum
       };
-
+      this.incomService.modalVisible=false;
 
 
 
