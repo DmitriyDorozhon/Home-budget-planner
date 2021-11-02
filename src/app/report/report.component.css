@@ -1,6 +1,5 @@
 .container{
-  padding-top: 15px;
-  height: 87vh;
+  padding-top: 64px;
   display: flex;
   justify-content: center;
 }
@@ -22,6 +21,9 @@
   background: -moz-linear-gradient(270deg, rgb(190, 234, 224), rgb(121, 222, 225));
   background: linear-gradient(270deg, rgb(190, 234, 224), rgb(121, 222, 225));
 }
+.one{
+  color: #9132bf;
+}
 .expenses{
   background: -webkit-linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
   background: -moz-linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
@@ -31,7 +33,9 @@
   background: -webkit-linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
   background: -moz-linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
   background: linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
-  width: 600px;
+  width: 520px;
+  width: 541px;
+  padding: 67px 28px;
 }
 .result{
   background: -webkit-linear-gradient(270deg, rgb(190, 234, 224), rgb(121, 222, 225));
@@ -61,5 +65,8 @@
 }
 .title{
   margin: 10px 0;
+}
+.center{
+
 }
 

@@ -4,6 +4,10 @@
   background: -webkit-linear-gradient(0deg, rgb(13, 99, 19), rgb(67, 146, 66) 46%);
   background: -moz-linear-gradient(0deg, rgb(13, 99, 19), rgb(67, 146, 66) 46%);
   background: linear-gradient(0deg, rgb(13, 99, 19), rgb(67, 146, 66) 46%);
+  /*background: -webkit-linear-gradient(0deg, rgb(105, 0, 97) 9%, rgb(90, 70, 154) 61%);*/
+  /*background: -moz-linear-gradient(0deg, rgb(105, 0, 97) 9%, rgb(90, 70, 154) 61%);*/
+  /*background: linear-gradient(0deg, rgb(105, 0, 97) 9%, rgb(90, 70, 154) 61%);*/
+
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,5 +1,6 @@
 <div class="container">
-  <div>
+
+  <div >
   <div class="incomeAndSpend">
     <div class="income">
       <div class="incomeAndSpendLine"><span>Total money received:</span> <span class="incomeSpan">{{reportService.getSumSumCardAndCash("income","sum")|  mask:"separator.0 ":"."}}  ₴</span></div>
@@ -14,8 +15,8 @@
   </div>
     <div class="result">
    <div class="resultDiv"> {{reportService.getResult()}}</div>
-   <div class="resultDiv">Your {{reportService.getSumSumCardAndCash("income","sum")>reportService.getSumSumCardAndCash("expenses","sum")?"profit":"loss"}} is  <span class="incomeSpan">{{reportService.getProfitOrLoss()|  mask:"separator.0 ":"."}}  ₴</span></div>
-   <div class="resultDiv"> Spending is {{reportService.getSpentPercent()}}% of your income</div>
+   <div class="resultDiv">Your {{reportService.getSumSumCardAndCash("income","sum")>reportService.getSumSumCardAndCash("expenses","sum")?"profit":"loss"}} is <span class="one">{{reportService.getProfitOrLoss()|  mask:"separator.0 ":"."}}  ₴</span> </div>
+   <div class="resultDiv"> Spending is <span class="one">{{reportService.getSpentPercent()}}%</span> of your income</div>
     </div>
   </div>
   <div class="cer">
@@ -38,7 +39,8 @@
     <div class="category">Other: <span class="expensesSpan">{{reportService.getCategorySum("other")|  mask:"separator.0 ":"."}}  ₴</span>
       </div>
   </div>
-  </div><div class="cer">
+  </div>
+  <div class="cer">
   <div class="spentCategories">
     <div class="title">Percentage of expenses by category:</div>
     <div class="category">Groceries: <span class="expensesSpan"> {{reportService.getPercent(reportService.getCategorySum("groceries"))}}%</span>
