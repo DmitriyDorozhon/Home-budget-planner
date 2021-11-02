@@ -2,20 +2,20 @@
   padding-top: 15px;
   height: 87vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .incomeAndSpend{
   display: flex;
+  flex-direction: column;
 }
 .income,.expenses,.spentCategories,.result{
   display: flex;
   flex-direction: column;
-  margin: 0 8px;
-  font-size: 20px;
+  font-size: 29px;
   padding: 21px;
   border-radius: 19px;
+  margin: 4px 19px;
 }
 .income{
   background: -webkit-linear-gradient(270deg, rgb(190, 234, 224), rgb(121, 222, 225));
@@ -31,10 +31,27 @@
   background: -webkit-linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
   background: -moz-linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
   background: linear-gradient(270deg, rgb(255, 224, 163), rgb(232, 169, 169));
-  width: 800px;
+  width: 600px;
+}
+.result{
+  background: -webkit-linear-gradient(270deg, rgb(190, 234, 224), rgb(121, 222, 225));
+  background: -moz-linear-gradient(270deg, rgb(190, 234, 224), rgb(121, 222, 225));
+  background: linear-gradient(270deg, rgb(190, 234, 224), rgb(121, 222, 225));
 }
 .incomeSpan{
   color: #59af28;
+}
+.incomeAndSpendLine,.category,.resultDiv{
+  margin: 5px 0px;
+
+}
+.category{
+  display: flex;
+  justify-content: space-between;
+}
+.incomeAndSpendLine{
+  display: flex;
+  justify-content: space-between;
 }
 .expensesSpan{
   color: #b9111d;
@@ -42,8 +59,7 @@
 .percentSpan{
   color: #fcfcfc;
 }
-.category{
-  margin: 5px 0px;
-  font-size: 29px;
+.title{
+  margin: 10px 0;
 }
 

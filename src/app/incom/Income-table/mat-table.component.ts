@@ -1,6 +1,8 @@
 import {Component, Injectable, OnInit, ViewChild} from '@angular/core';
 import {IncomService} from "../incom.service";
 import {MatTable, MatTableModule} from "@angular/material/table";
+import {GlobalService} from "../../global.service";
+import {global} from "@angular/compiler/src/util";
 
 
 
@@ -13,20 +15,26 @@ export class MatTableComponent implements OnInit {
 
 
 
-  constructor(public incomeService:IncomService) { }
-  displayedColumns: string[] = ['sum', 'comment', 'date', 'wallet'];
+  constructor(public incomeService:IncomService,private global:GlobalService) { }
+  displayedColumns: string[] = ['sum', 'comment', 'date', 'wallet','delete'];
   dataSource =this.incomeService.incomeArr;
 
   @ViewChild(MatTable) table!: MatTable<any>;
 
-  addData() {
-    this.table.renderRows();
+  public removeCart(i:any){
+    if(this.incomeService.incomeArr[i].wallet === "card"){
+    this.global.card-=this.incomeService.incomeArr[i].sum;
+    this.incomeService.incomeArr.splice(i,1);
+      this.table.renderRows();
+    }
+    else if(this.incomeService.incomeArr[i].wallet === "cash"){
+      this.global.cash-=this.incomeService.incomeArr[i].sum;
+      this.incomeService.incomeArr.splice(i,1);
+      this.table.renderRows();
+    }
   }
 
-  removeData() {
-    this.dataSource.pop();
-    this.table.renderRows();
-  }
+
 
 
   ngOnInit(): void {

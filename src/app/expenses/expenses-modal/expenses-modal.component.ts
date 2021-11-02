@@ -14,7 +14,7 @@ import {ExpensesService} from "../expenses.service";
 
 
 export class ExpensesModalComponent implements OnInit {
-  constructor(public expensesService: ExpensesService) {
+  constructor(public expensesService: ExpensesService,public global:GlobalService) {
 
   }
   public categories = [
@@ -48,7 +48,12 @@ export class ExpensesModalComponent implements OnInit {
 
     if (this.expensesFormGroup.valid) {
       this.expensesService.expensesArr.push(new modelSendObj(ExpensesSum, ExpensesComment, ExpensesDate.toDateString(), ExpensesWallet,ExpensesCategory));
-      this.expensesService.subtractExpensesSum();
+      if (ExpensesWallet==="card"){
+        this.global.card-=ExpensesSum
+      }
+      else if (ExpensesWallet==="cash"){
+        this.global.cash-=ExpensesSum
+      };
       this.expensesService.modalVisible = false;
     }
 

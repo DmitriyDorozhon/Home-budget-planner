@@ -2,41 +2,61 @@
   <div>
   <div class="incomeAndSpend">
     <div class="income">
-      <div><span>Total money received:</span> <span class="incomeSpan">{{reportService.getSumSumCardAndCash("income","sum")|  mask:"separator.0 ":"."}}  ₴</span></div>
-      <div>On the card:  <span class="incomeSpan">{{reportService.getSumSumCardAndCash("income","card")|  mask:"separator.0 ":"."}}  ₴</span></div>
-      <div>Cash:   <span class="incomeSpan">{{reportService.getSumSumCardAndCash("income","cash")|  mask:"separator.0 ":"."}}  ₴</span></div>
+      <div class="incomeAndSpendLine"><span>Total money received:</span> <span class="incomeSpan">{{reportService.getSumSumCardAndCash("income","sum")|  mask:"separator.0 ":"."}}  ₴</span></div>
+      <div class="incomeAndSpendLine">On the card:  <span class="incomeSpan">{{reportService.getSumSumCardAndCash("income","card")|  mask:"separator.0 ":"."}}  ₴</span></div>
+      <div class="incomeAndSpendLine">Cash:   <span class="incomeSpan">{{reportService.getSumSumCardAndCash("income","cash")|  mask:"separator.0 ":"."}}  ₴</span></div>
     </div>
     <div class="expenses">
-      <div>Total spent:  <span class="expensesSpan">{{reportService.getSumSumCardAndCash("expenses","sum")|  mask:"separator.0 ":"."}}  ₴</span></div>
-      <div>From card:  <span class="expensesSpan">{{reportService.getSumSumCardAndCash("expenses","card")|  mask:"separator.0 ":"."}}  ₴</span></div>
-      <div>Cash:  <span class="expensesSpan">{{reportService.getSumSumCardAndCash("expenses","cash") |  mask:"separator.0 ":"."}}  ₴</span></div>
+      <div class="incomeAndSpendLine">Total spent:  <span class="expensesSpan">{{reportService.getSumSumCardAndCash("expenses","sum")|  mask:"separator.0 ":"."}}  ₴</span></div>
+      <div class="incomeAndSpendLine">From card:  <span class="expensesSpan">{{reportService.getSumSumCardAndCash("expenses","card")|  mask:"separator.0 ":"."}}  ₴</span></div>
+      <div class="incomeAndSpendLine">Cash:  <span class="expensesSpan">{{reportService.getSumSumCardAndCash("expenses","cash") |  mask:"separator.0 ":"."}}  ₴</span></div>
     </div>
   </div>
     <div class="result">
-   <span class="resultSpan"> {{reportService.getResult()}}  ₴</span>
-   <span class="resultSpan"> Your spending is {{reportService.getSpentPercent()}}% of your income</span>
+   <div class="resultDiv"> {{reportService.getResult()}}</div>
+   <div class="resultDiv">Your {{reportService.getSumSumCardAndCash("income","sum")>reportService.getSumSumCardAndCash("expenses","sum")?"profit":"loss"}} is  <span class="incomeSpan">{{reportService.getProfitOrLoss()|  mask:"separator.0 ":"."}}  ₴</span></div>
+   <div class="resultDiv"> Spending is {{reportService.getSpentPercent()}}% of your income</div>
     </div>
   </div>
   <div class="cer">
   <div class="spentCategories">
-    <h2>You have spent in categories:</h2>
-    <div class="category">Groceries <span class="expensesSpan"> {{reportService.getCategorySum("groceries")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> which is <span class="percentSpan">{{reportService.getPercent(reportService.getCategorySum("groceries"))}}%</span> of the total</span></div>
-    <div class="category">Home <span class="expensesSpan">{{reportService.getCategorySum("home")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> which is {{reportService.getPercent(reportService.getCategorySum("home"))}}% of the total</span></div>
-    <div class="category">Transportation <span class="expensesSpan">{{reportService.getCategorySum("transportation")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> which is {{reportService.getPercent(reportService.getCategorySum("transportation"))}}% of the total</span></div>
-    <div class="category">Leisure <span class="expensesSpan">{{reportService.getCategorySum("leisure")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> which is {{reportService.getPercent(reportService.getCategorySum("leisure"))}}% of the total</span></div>
-    <div class="category">Health <span class="expensesSpan">{{reportService.getCategorySum("health")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> which is {{reportService.getPercent(reportService.getCategorySum("health"))}}% of the total</span></div>
-    <div class="category">Communal payments <span class="expensesSpan">{{reportService.getCategorySum("communal payments")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> which is {{reportService.getPercent(reportService.getCategorySum("communal payments"))}}% of the total</span></div>
-    <div class="category">Gifts <span class="expensesSpan">{{reportService.getCategorySum("gifts")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> Which is {{reportService.getPercent(reportService.getCategorySum("gifts"))}}% of the total</span> </div>
-    <div class="category">Other <span class="expensesSpan">{{reportService.getCategorySum("other")|  mask:"separator.0 ":"."}}  ₴</span>
-      <span> which is {{reportService.getPercent(reportService.getCategorySum("other"))}}% of the total</span></div>
+    <div class="title">You have spent in categories:</div>
+    <div class="category">Groceries: <span class="expensesSpan"> {{reportService.getCategorySum("groceries")|  mask:"separator.0 ":"."}}  ₴</span>
+    </div>
+    <div class="category">Home: <span class="expensesSpan">{{reportService.getCategorySum("home")|  mask:"separator.0 ":"."}}  ₴</span>
+      </div>
+    <div class="category">Transportation: <span class="expensesSpan">{{reportService.getCategorySum("transportation")|  mask:"separator.0 ":"."}}  ₴</span>
+      </div>
+    <div class="category">Leisure: <span class="expensesSpan">{{reportService.getCategorySum("leisure")|  mask:"separator.0 ":"."}}  ₴</span>
+      </div>
+    <div class="category">Health: <span class="expensesSpan">{{reportService.getCategorySum("health")|  mask:"separator.0 ":"."}}  ₴</span>
+      </div>
+    <div class="category">Communal payments: <span class="expensesSpan">{{reportService.getCategorySum("communal payments")|  mask:"separator.0 ":"."}}  ₴</span>
+     </div>
+    <div class="category">Gifts: <span class="expensesSpan">{{reportService.getCategorySum("gifts")|  mask:"separator.0 ":"."}}  ₴</span>
+       </div>
+    <div class="category">Other: <span class="expensesSpan">{{reportService.getCategorySum("other")|  mask:"separator.0 ":"."}}  ₴</span>
+      </div>
   </div>
-
+  </div><div class="cer">
+  <div class="spentCategories">
+    <div class="title">Percentage of expenses by category:</div>
+    <div class="category">Groceries: <span class="expensesSpan"> {{reportService.getPercent(reportService.getCategorySum("groceries"))}}%</span>
+    </div>
+    <div class="category">Home: <span class="expensesSpan">{{reportService.getPercent(reportService.getCategorySum("home"))}}%</span>
+      </div>
+    <div class="category">Transportation: <span class="expensesSpan">{{reportService.getPercent(reportService.getCategorySum("transportation"))}}%</span>
+      </div>
+    <div class="category">Leisure: <span class="expensesSpan">{{reportService.getPercent(reportService.getCategorySum("leisure"))}}%</span>
+      </div>
+    <div class="category">Health: <span class="expensesSpan">{{reportService.getPercent(reportService.getCategorySum("health"))}}%</span>
+      </div>
+    <div class="category">Communal payments: <span class="expensesSpan">{{reportService.getPercent(reportService.getCategorySum("communal payments"))}}%</span>
+     </div>
+    <div class="category">Gifts: <span class="expensesSpan">{{reportService.getPercent(reportService.getCategorySum("gifts"))}}%</span>
+       </div>
+    <div class="category">Other: <span class="expensesSpan">{{reportService.getPercent(reportService.getCategorySum("other"))}}%</span>
+      </div>
   </div>
-</div>
+  </div>
+  </div>

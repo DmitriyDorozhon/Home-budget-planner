@@ -13,7 +13,7 @@
       <mat-form-field appearance="standard">
         <mat-label>Comment</mat-label>
         <input matInput  formControlName="comment" #comment maxlength="256" placeholder="Enter Comment">
-        <mat-hint align="end">{{comment.value.length}} / 256</mat-hint>
+        <mat-hint align="end">{{comment.value.length}} / 160</mat-hint>
         <mat-error *ngIf="!comment.required">
           Comment is <strong>required</strong>
         </mat-error>

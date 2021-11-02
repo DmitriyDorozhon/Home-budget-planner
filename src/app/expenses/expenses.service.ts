@@ -72,9 +72,7 @@ export class ExpensesService {
 
 
   public subtractExpensesSum() {
-    this.incomeService.addIncomeSum();
     this.expensesArr.forEach((item) => {
-
       if (item.wallet === "card") {
         this.global.card -= item.sum
       } else if (item.wallet === "cash") {

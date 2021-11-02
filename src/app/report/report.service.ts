@@ -37,15 +37,28 @@ export class ReportService {
   const incomeSum:number = this.getSumSumCardAndCash("income","sum");
   const expensesSum:number = this.getSumSumCardAndCash("expenses","sum");
     if(incomeSum>expensesSum){
-      result = `You got more than you spent.
-      Your profit is ${incomeSum - expensesSum}`;
+      result = `You got more than you spent.`
+     ;
     }
     else if(expensesSum>incomeSum){
-      result = `You spent more than you received.
-      Your loss is ${expensesSum - incomeSum}`;
+      result = `You spent more than you received.`
+
     }
         return result;
   };
+
+  public getProfitOrLoss (){
+    let result:number= 0;
+    const incomeSum:number = this.getSumSumCardAndCash("income","sum");
+    const expensesSum:number = this.getSumSumCardAndCash("expenses","sum");
+    if(incomeSum>expensesSum){
+      result = incomeSum - expensesSum;
+    }
+    else if(expensesSum>incomeSum){
+      result = expensesSum - incomeSum;
+    }
+    return result;
+  }
 
   public getCategorySum(category:string):number{
     let categorySum:number=0;

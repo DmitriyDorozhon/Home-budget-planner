@@ -27,6 +27,7 @@ import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensesTableComponent } from './expenses/expenses-table/expenses-table.component';
 import { ExpensesModalComponent } from './expenses/expenses-modal/expenses-modal.component';
 import { ReportComponent } from './report/report.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ReportComponent } from './report/report.component';
     ExpensesComponent,
     ExpensesTableComponent,
     ExpensesModalComponent,
-    ReportComponent
+    ReportComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
